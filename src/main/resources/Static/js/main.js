@@ -1,11 +1,20 @@
 'use strict';
 
 var usernamePage = document.querySelector('#username-page');
+var userForm = document.querySelector('#user-form');
+
 var chatPage = document.querySelector('#chat-page');
-var usernameForm = document.querySelector('#usernameForm');
+// var chatPage = document.querySelector('#form-container');
+
 var messageForm = document.querySelector('#messageForm');
+// var messageForm = document.querySelector('#message-form');
+
+//same
 var messageInput = document.querySelector('#message');
+
+
 var messageArea = document.querySelector('#messageArea');
+
 var connectingElement = document.querySelector('.connecting');
 
 var stompClient = null;
@@ -17,7 +26,7 @@ var colors = [
 ];
 
 function connect(event) {
-    username = document.querySelector('#name').value.trim();
+    username = document.querySelector('#username').value.trim();
 
     if(username) {
         usernamePage.classList.add('hidden');
@@ -134,9 +143,12 @@ function exitChat() {
     }
     usernamePage.classList.remove('hidden');
     chatPage.classList.add('hidden');
-    document.querySelector('#name').value = '';
+    var nameInput = document.querySelector('#username');
+    nameInput.value = ''; // Reset the value to empty
+    nameInput.placeholder = 'Enter your name';
 }
 
 document.getElementById('exitButton').addEventListener('click', exitChat, true);
-usernameForm.addEventListener('submit', connect, true);
+userForm.addEventListener('submit', connect, true);
 messageForm.addEventListener('submit', sendMessage, true);
+

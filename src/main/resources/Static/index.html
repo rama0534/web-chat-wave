@@ -14,18 +14,14 @@
 </noscript>
 
 <div id="username-page">
-    <div class="username-page-container">
-        <h1 class="title">WebChatWave</h1>
-        <form id="usernameForm" name="usernameForm">
-            <div class="form-group">
-                <input type="text" id="name" placeholder="Enter your name" autocomplete="off" class="form-control" required />
-            </div>
-            <div class="form-group">
-                <button type="submit" class="accent username-submit">Start Chatting</button>
-            </div>
-        </form>
-    </div>
+    <h1>Enter Your Username</h1>
+    <form id="user-form" name="user-form">
+        <input type="text" id="username" placeholder="Enter your name" required>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
 </div>
+
 
 <div id="chat-page" class="hidden">
     <div class="chat-container">
@@ -42,6 +38,7 @@
             <div class="form-group">
                 <div class="input-group">
                     <input type="text" id="message" placeholder="Type a message..." autocomplete="off" class="form-control"/>
+                    <br>
                     <button type="submit" class="primary">Send</button>
                     <button type="button" id="exitButton" class="exit">Exit</button>
                 </div>
@@ -49,6 +46,8 @@
         </form>
     </div>
 </div>
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
